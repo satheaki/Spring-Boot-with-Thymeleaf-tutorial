@@ -25,7 +25,7 @@ public class SpringBootThymeleafApplicationTests {
 
 	@Before
 	public void setUp() throws Exception {
-		mvc = MockMvcBuilders.standaloneSetup(new Home()).build();
+		mvc = MockMvcBuilders.standaloneSetup(new com.jvmhub.springboot.controller.Home()).build();
 	}
 
 	@Test
