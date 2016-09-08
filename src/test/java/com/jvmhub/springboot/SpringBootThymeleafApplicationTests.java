@@ -11,8 +11,18 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @WebAppConfiguration
 public class SpringBootThymeleafApplicationTests {
 
-	@Test
-	public void contextLoads() {
+	private MockMvc mvc;
+
+	@Before
+	public void setUp() throws Exception {
+		mvc = MockMvcBuilders.standaloneSetup(new Home()).build();
 	}
+
+	@Test
+  public void testHome() throws Exception {
+    mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
+        .andExpect(status().isOk())
+        .andExpect(content().string(equalTo("Greetings Akshay!")));
+  }
 
 }
