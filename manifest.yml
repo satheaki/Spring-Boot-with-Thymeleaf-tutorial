@@ -1,0 +1,7 @@
+---
+applications:
+- name: Spring-Boot-with-Thymeleaf-tutorial
+  memory: 512M
+  host: Spring-Boot-with-Thymeleaf-tutorial
+  instances: 1
+  path: target/spring-boot-thymeleaf-0.1.0.jar
